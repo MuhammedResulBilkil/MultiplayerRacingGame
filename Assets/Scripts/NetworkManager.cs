@@ -168,8 +168,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         
         if (!string.IsNullOrEmpty(_gameModeName))
         {
-            Hashtable customRoomProperties = new Hashtable { { GameModePropKey, _gameModeName } };
-            PhotonNetwork.JoinRandomRoom(customRoomProperties, 0);
+            Hashtable expectedCustomRoomProperties = new Hashtable { { GameModePropKey, _gameModeName } };
+            PhotonNetwork.JoinRandomRoom(expectedCustomRoomProperties, 0);
         }
         else
         {
@@ -182,7 +182,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         if(PhotonNetwork.IsMasterClient)
             PhotonNetwork.LoadLevel("GameScene");
     }
-
 
     #endregion
 
