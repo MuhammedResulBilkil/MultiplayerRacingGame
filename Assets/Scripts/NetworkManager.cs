@@ -9,9 +9,7 @@ using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
-    public const string GameModePropKey = "gm";
-    public const string RacingModeName = "rc";
-    public const string DeathRaceModeName = "dr";
+    
     
     [Header("Connection Status")] 
     [SerializeField] private TextMeshProUGUI _connectionStatusText;
@@ -118,12 +116,12 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
             RoomOptions roomOptions = new RoomOptions();
             roomOptions.MaxPlayers = 3;
-            string[] roomPropsInLobby = { GameModePropKey }; // gm = Game Mode
+            string[] roomPropsInLobby = { MultiplayerRacingGame.GameModePropKey }; // gm = Game Mode
             //Two Game Modes
             //1. Racing = "rc"
             //2. Death Race = "dr"
 
-            Hashtable customRoomProperties = new Hashtable { { GameModePropKey, _gameModeName } };
+            Hashtable customRoomProperties = new Hashtable { { MultiplayerRacingGame.GameModePropKey, _gameModeName } };
 
             roomOptions.CustomRoomProperties = customRoomProperties;
             roomOptions.CustomRoomPropertiesForLobby = roomPropsInLobby;
@@ -168,7 +166,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         
         if (!string.IsNullOrEmpty(_gameModeName))
         {
-            Hashtable expectedCustomRoomProperties = new Hashtable { { GameModePropKey, _gameModeName } };
+            Hashtable expectedCustomRoomProperties = new Hashtable { { MultiplayerRacingGame.GameModePropKey, _gameModeName } };
             PhotonNetwork.JoinRandomRoom(expectedCustomRoomProperties, 0);
         }
         else
@@ -210,9 +208,9 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         
         ActivatePanel(_insideRoomUIPanel);
 
-        if (PhotonNetwork.CurrentRoom.CustomProperties.ContainsKey(GameModePropKey))
+        if (PhotonNetwork.CurrentRoom.CustomProperties.ContainsKey(MultiplayerRacingGame.GameModePropKey))
         {
-            if (PhotonNetwork.CurrentRoom.CustomProperties.TryGetValue(GameModePropKey, out object gameModeName))
+            if (PhotonNetwork.CurrentRoom.CustomProperties.TryGetValue(MultiplayerRacingGame.GameModePropKey, out object gameModeName))
             {
                 Debug.LogFormat($"Game Mode Name = {gameModeName}");
                 _startGameButton.SetActive(PhotonNetwork.LocalPlayer.IsMasterClient);
@@ -229,6 +227,12 @@ public class NetworkManager : MonoBehaviourPunCallbacks
                     PlayerListEntryInitializer playerListEntryInitializer =
                         playerListGameObject.GetComponent<PlayerListEntryInitializer>();
                     playerListEntryInitializer.Initializer(player.ActorNumber, player.NickName);
+
+                    if (player.CustomProperties.TryGetValue(MultiplayerRacingGame.IsPlayerReady,
+                            out object isPlayerReady))
+                    {
+                        playerListEntryInitializer.SetPlayerReady((bool) isPlayerReady);
+                    }
                     
                     /*playerListGameObject.transform.Find("Text_PlayerName").GetComponent<TextMeshProUGUI>().text =
                         $"{player.NickName}";
@@ -279,12 +283,12 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.MaxPlayers = 3;
-        string[] roomPropsInLobby = { GameModePropKey }; // gm = Game Mode
+        string[] roomPropsInLobby = { MultiplayerRacingGame.GameModePropKey }; // gm = Game Mode
         //Two Game Modes
         //1. Racing = "rc"
         //2. Death Race = "dr"
 
-        Hashtable customRoomProperties = new Hashtable { { GameModePropKey, _gameModeName } };
+        Hashtable customRoomProperties = new Hashtable { { MultiplayerRacingGame.GameModePropKey, _gameModeName } };
 
         roomOptions.CustomRoomProperties = customRoomProperties;
         roomOptions.CustomRoomPropertiesForLobby = roomPropsInLobby;
@@ -411,7 +415,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     public void SetGameMode(bool isRacingModeSelected)
     {
-        _gameModeName = isRacingModeSelected ? RacingModeName : DeathRaceModeName;
+        _gameModeName = isRacingModeSelected ? MultiplayerRacingGame.RacingModeName : MultiplayerRacingGame.DeathRaceModeName;
     }
 
     #endregion
