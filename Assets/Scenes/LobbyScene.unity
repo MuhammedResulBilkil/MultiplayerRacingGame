@@ -2322,7 +2322,6 @@ MonoBehaviour:
   _gameOptionsUIPanel: {fileID: 1897633495}
   _createRoomUIPanel: {fileID: 274552716}
   _roomNameInputField: {fileID: 1213784094}
-  _maxPlayerInputField: {fileID: 0}
   _insideRoomUIPanel: {fileID: 1598625407}
   _roomInfoText: {fileID: 919297058}
   _playerListPrefab: {fileID: 0}
@@ -7244,8 +7243,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 294548174}
+        m_TargetAssemblyTypeName: NetworkManager, Assembly-CSharp
         m_MethodName: OnCreateRoomButtonClicked
         m_Mode: 1
         m_Arguments:

@@ -5,6 +5,7 @@ using Photon.Realtime;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
@@ -24,7 +25,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     [Header("Create Room UI Panel")] 
     [SerializeField] private GameObject _createRoomUIPanel;
     [SerializeField] private TMP_InputField _roomNameInputField;
-    [SerializeField] private TMP_InputField _maxPlayerInputField;
     
     [Header("Inside Room UI Panel")] 
     [SerializeField] private GameObject _insideRoomUIPanel;
@@ -105,15 +105,18 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
         if (string.IsNullOrEmpty(roomName))
             roomName = $"Room {Random.Range(0, 100000)}";
-        
-        byte maxPlayerCount = (byte)int.Parse(_maxPlayerInputField.text);
 
-        // Just In Case
-        if (maxPlayerCount == 0)
-            maxPlayerCount = 1;
-        
         RoomOptions roomOptions = new RoomOptions();
-        roomOptions.MaxPlayers = maxPlayerCount;
+        roomOptions.MaxPlayers = 3;
+        string[] roomPropsInLobby = { "gm" };
+        //Two Game Modes
+        //1. Racing = "rc"
+        //2. Death Race = "dr"
+        
+        Hashtable customRoomProperties = new Hashtable {{"gm", "rc"}};
+
+        roomOptions.CustomRoomProperties = customRoomProperties;
+        roomOptions.CustomRoomPropertiesForLobby = roomPropsInLobby;
 
         PhotonNetwork.CreateRoom(roomName, roomOptions);
     }
@@ -182,7 +185,16 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         Debug.LogFormat($"{PhotonNetwork.LocalPlayer.NickName} joined to {PhotonNetwork.CurrentRoom.Name}!");
-        ActivatePanel(_insideRoomUIPanel);
+
+        if (PhotonNetwork.CurrentRoom.CustomProperties.ContainsKey("gm"))
+        {
+            if (PhotonNetwork.CurrentRoom.CustomProperties.TryGetValue("gm", out object gameModeName))
+            {
+                Debug.LogFormat($"Game Mode Name = {gameModeName}");
+            }
+        }
+        
+        /*ActivatePanel(_insideRoomUIPanel);
 
         _startGameButton.SetActive(PhotonNetwork.LocalPlayer.IsMasterClient);
 
@@ -204,7 +216,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
                 playerListGameObject.transform.Find("PlayerIndicator").gameObject.SetActive(false);
 
             _playerListGameObjects.Add(player.ActorNumber, playerListGameObject);
-        }
+        }*/
     }
 
     public override void OnJoinRandomFailed(short returnCode, string message)
