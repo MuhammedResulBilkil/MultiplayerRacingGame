@@ -9,6 +9,10 @@ using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
+    public const string GameModePropKey = "gm";
+    public const string RacingModeName = "rc";
+    public const string DeathRaceModeName = "dr";
+    
     [Header("Connection Status")] 
     [SerializeField] private TextMeshProUGUI _connectionStatusText;
 
@@ -24,6 +28,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     
     [Header("Create Room UI Panel")] 
     [SerializeField] private GameObject _createRoomUIPanel;
+    [SerializeField] private GameObject _creatingRoomUIPanel;
     [SerializeField] private TMP_InputField _roomNameInputField;
     
     [Header("Inside Room UI Panel")] 
@@ -41,12 +46,12 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     [Header("Join Random Room UI Panel")] 
     [SerializeField] private GameObject _joinRandomRoomUIPanel;
 
+    private string _gameModeName;
+    
     private List<GameObject> _panels = new List<GameObject>();
     private Dictionary<string, RoomInfo> _cachedRoomList = new Dictionary<string, RoomInfo>();
     private Dictionary<string, GameObject> _roomListGameObjects = new Dictionary<string, GameObject>();
     private Dictionary<int, GameObject> _playerListGameObjects = new Dictionary<int, GameObject>();
-
-    
 
     #region Unity Methods
 
@@ -55,6 +60,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         _panels.Add(_loginUIPanel);
         _panels.Add(_gameOptionsUIPanel);
         _panels.Add(_createRoomUIPanel);
+        _panels.Add(_creatingRoomUIPanel);
         _panels.Add(_insideRoomUIPanel);
         _panels.Add(_connectingInfoUIPanel);
         //_panels.Add(_roomListUIPanel);
@@ -101,24 +107,33 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     
     public void OnCreateRoomButtonClicked()
     {
-        string roomName = _roomNameInputField.text;
+        if (!string.IsNullOrEmpty(_gameModeName))
+        {
+            ActivatePanel(_creatingRoomUIPanel);
+            
+            string roomName = _roomNameInputField.text;
 
-        if (string.IsNullOrEmpty(roomName))
-            roomName = $"Room {Random.Range(0, 100000)}";
+            if (string.IsNullOrEmpty(roomName))
+                roomName = $"Room {Random.Range(0, 100000)}";
 
-        RoomOptions roomOptions = new RoomOptions();
-        roomOptions.MaxPlayers = 3;
-        string[] roomPropsInLobby = { "gm" };
-        //Two Game Modes
-        //1. Racing = "rc"
-        //2. Death Race = "dr"
+            RoomOptions roomOptions = new RoomOptions();
+            roomOptions.MaxPlayers = 3;
+            string[] roomPropsInLobby = { "gm" }; // gm = Game Mode
+            //Two Game Modes
+            //1. Racing = "rc"
+            //2. Death Race = "dr"
         
-        Hashtable customRoomProperties = new Hashtable {{"gm", "rc"}};
+            Hashtable customRoomProperties = new Hashtable {{"gm", _gameModeName}};
 
-        roomOptions.CustomRoomProperties = customRoomProperties;
-        roomOptions.CustomRoomPropertiesForLobby = roomPropsInLobby;
+            roomOptions.CustomRoomProperties = customRoomProperties;
+            roomOptions.CustomRoomPropertiesForLobby = roomPropsInLobby;
 
-        PhotonNetwork.CreateRoom(roomName, roomOptions);
+            PhotonNetwork.CreateRoom(roomName, roomOptions);
+        }
+        else
+        {
+            Debug.LogError("You must select a game mode first!!!");
+        }
     }
 
     public void OnCancelButtonClicked()
@@ -342,6 +357,11 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
         foreach (GameObject panel in _panels)
             panel.SetActive(panelToBeActivatedName.Equals(panel.name));
+    }
+
+    public void SetGameMode(bool isRacingModeSelected)
+    {
+        _gameModeName = isRacingModeSelected ? RacingModeName : DeathRaceModeName;
     }
 
     #endregion
