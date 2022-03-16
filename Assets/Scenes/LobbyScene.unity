@@ -2325,7 +2325,7 @@ MonoBehaviour:
   _roomNameInputField: {fileID: 1213784094}
   _insideRoomUIPanel: {fileID: 1598625407}
   _roomInfoText: {fileID: 919297058}
-  _playerListPrefab: {fileID: 0}
+  _playerListPrefab: {fileID: 1294863439290794768, guid: 46f749e614f847a47940ad1dde964668, type: 3}
   _playerListContent: {fileID: 244169819}
   _startGameButton: {fileID: 1279214256}
   _roomListUIPanel: {fileID: 0}

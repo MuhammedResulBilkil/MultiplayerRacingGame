@@ -216,6 +216,31 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             if (PhotonNetwork.CurrentRoom.CustomProperties.TryGetValue(GameModePropKey, out object gameModeName))
             {
                 Debug.LogFormat($"Game Mode Name = {gameModeName}");
+                _startGameButton.SetActive(PhotonNetwork.LocalPlayer.IsMasterClient);
+
+                _roomInfoText.text =
+                    $"Room Name: {PhotonNetwork.CurrentRoom.Name} Players/Max.Players: {PhotonNetwork.CurrentRoom.PlayerCount} / {PhotonNetwork.CurrentRoom.MaxPlayers}";
+                
+                //Instantiate Player List GameObjects
+                foreach (Player player in PhotonNetwork.PlayerList)
+                {
+                    GameObject playerListGameObject = Instantiate(_playerListPrefab, _playerListContent.transform);
+                    playerListGameObject.transform.localScale = Vector3.one;
+
+                    PlayerListEntryInitializer playerListEntryInitializer =
+                        playerListGameObject.GetComponent<PlayerListEntryInitializer>();
+                    playerListEntryInitializer.Initializer(player.ActorNumber, player.NickName);
+                    
+                    /*playerListGameObject.transform.Find("Text_PlayerName").GetComponent<TextMeshProUGUI>().text =
+                        $"{player.NickName}";
+            
+                    if (player.ActorNumber == PhotonNetwork.LocalPlayer.ActorNumber)
+                        playerListGameObject.transform.Find("PlayerIndicator").gameObject.SetActive(true);
+                    else
+                        playerListGameObject.transform.Find("PlayerIndicator").gameObject.SetActive(false);*/
+
+                    _playerListGameObjects.Add(player.ActorNumber, playerListGameObject);
+                }
             }
         }
         
@@ -276,14 +301,18 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         
         GameObject playerListGameObject = Instantiate(_playerListPrefab, _playerListContent.transform);
         playerListGameObject.transform.localScale = Vector3.one;
+        
+        PlayerListEntryInitializer playerListEntryInitializer =
+            playerListGameObject.GetComponent<PlayerListEntryInitializer>();
+        playerListEntryInitializer.Initializer(newPlayer.ActorNumber, newPlayer.NickName);
 
-        playerListGameObject.transform.Find("Text_PlayerName").GetComponent<TextMeshProUGUI>().text =
+        /*playerListGameObject.transform.Find("Text_PlayerName").GetComponent<TextMeshProUGUI>().text =
             $"{newPlayer.NickName}";
             
         if (newPlayer.ActorNumber == PhotonNetwork.LocalPlayer.ActorNumber)
             playerListGameObject.transform.Find("PlayerIndicator").gameObject.SetActive(true);
         else
-            playerListGameObject.transform.Find("PlayerIndicator").gameObject.SetActive(false);
+            playerListGameObject.transform.Find("PlayerIndicator").gameObject.SetActive(false);*/
 
         _playerListGameObjects.Add(newPlayer.ActorNumber, playerListGameObject);
     }
