@@ -118,12 +118,12 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
             RoomOptions roomOptions = new RoomOptions();
             roomOptions.MaxPlayers = 3;
-            string[] roomPropsInLobby = { "gm" }; // gm = Game Mode
+            string[] roomPropsInLobby = { GameModePropKey }; // gm = Game Mode
             //Two Game Modes
             //1. Racing = "rc"
             //2. Death Race = "dr"
-        
-            Hashtable customRoomProperties = new Hashtable {{"gm", _gameModeName}};
+
+            Hashtable customRoomProperties = new Hashtable { { GameModePropKey, _gameModeName } };
 
             roomOptions.CustomRoomProperties = customRoomProperties;
             roomOptions.CustomRoomPropertiesForLobby = roomPropsInLobby;
@@ -162,11 +162,19 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         PhotonNetwork.LeaveRoom();
     }
 
-    public void OnJoinRandomRoomButtonClicked()
+    public void OnJoinRandomRoomButtonClicked(bool isGameModeRacing)
     {
-        ActivatePanel(_joinRandomRoomUIPanel);
-
-        PhotonNetwork.JoinRandomRoom();
+        SetGameMode(isGameModeRacing);
+        
+        if (!string.IsNullOrEmpty(_gameModeName))
+        {
+            Hashtable customRoomProperties = new Hashtable { { GameModePropKey, _gameModeName } };
+            PhotonNetwork.JoinRandomRoom(customRoomProperties, 0);
+        }
+        else
+        {
+            Debug.LogError("Game Mode Name is Empty!!!");
+        }
     }
 
     public void OnStartGameButtonClicked()
@@ -199,11 +207,13 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        Debug.LogFormat($"{PhotonNetwork.LocalPlayer.NickName} joined to {PhotonNetwork.CurrentRoom.Name}!");
+        Debug.LogFormat($"{PhotonNetwork.LocalPlayer.NickName} joined to {PhotonNetwork.CurrentRoom.Name}! Player Count: {PhotonNetwork.CurrentRoom.PlayerCount}");
+        
+        ActivatePanel(_insideRoomUIPanel);
 
-        if (PhotonNetwork.CurrentRoom.CustomProperties.ContainsKey("gm"))
+        if (PhotonNetwork.CurrentRoom.CustomProperties.ContainsKey(GameModePropKey))
         {
-            if (PhotonNetwork.CurrentRoom.CustomProperties.TryGetValue("gm", out object gameModeName))
+            if (PhotonNetwork.CurrentRoom.CustomProperties.TryGetValue(GameModePropKey, out object gameModeName))
             {
                 Debug.LogFormat($"Game Mode Name = {gameModeName}");
             }
@@ -238,10 +248,22 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         Debug.LogFormat($"OnJoinRandomRoomFailed! Message: {message}");
 
-        string roomName = $"Room {Random.Range(0, 100000)}";
-        
+        string roomName = _roomNameInputField.text;
+
+        if (string.IsNullOrEmpty(roomName))
+            roomName = $"Room {Random.Range(0, 100000)}";
+
         RoomOptions roomOptions = new RoomOptions();
-        roomOptions.MaxPlayers = 20;
+        roomOptions.MaxPlayers = 3;
+        string[] roomPropsInLobby = { GameModePropKey }; // gm = Game Mode
+        //Two Game Modes
+        //1. Racing = "rc"
+        //2. Death Race = "dr"
+
+        Hashtable customRoomProperties = new Hashtable { { GameModePropKey, _gameModeName } };
+
+        roomOptions.CustomRoomProperties = customRoomProperties;
+        roomOptions.CustomRoomPropertiesForLobby = roomPropsInLobby;
 
         PhotonNetwork.CreateRoom(roomName, roomOptions);
     }
