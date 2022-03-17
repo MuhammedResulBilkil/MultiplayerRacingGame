@@ -4,6 +4,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 
@@ -33,6 +34,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     [SerializeField] private GameObject _playerListPrefab;
     [SerializeField] private GameObject _playerListContent;
     [SerializeField] private GameObject _startGameButton;
+    [SerializeField] private TextMeshProUGUI _gameModeText;
+    [SerializeField] private Image _insideRoomPanelBackground;
+    [SerializeField] private Sprite _racingBackground;
+    [SerializeField] private Sprite _deathRaceBackground;
 
     [Header("Room List UI Panel")] 
     [SerializeField] private GameObject _roomListUIPanel;
@@ -175,8 +180,19 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     public void OnStartGameButtonClicked()
     {
-        if(PhotonNetwork.IsMasterClient)
-            PhotonNetwork.LoadLevel("GameScene");
+        if (PhotonNetwork.CurrentRoom.CustomProperties.ContainsKey(MultiplayerRacingGame.GameModePropKey))
+        {
+            if (PhotonNetwork.CurrentRoom.CustomProperties.ContainsValue(MultiplayerRacingGame.RacingModeName))
+            {
+                //Racing Mode
+                PhotonNetwork.LoadLevel(MultiplayerRacingGame.RacingSceneName);
+            }
+            else if (PhotonNetwork.CurrentRoom.CustomProperties.ContainsValue(MultiplayerRacingGame.DeathRaceModeName))
+            {
+                //Death Race Mode
+                PhotonNetwork.LoadLevel(MultiplayerRacingGame.DeathRaceSceneName);
+            }
+        }
     }
 
     #endregion
@@ -214,6 +230,18 @@ public class NetworkManager : MonoBehaviourPunCallbacks
                 
                 _roomInfoText.text =
                     $"Room Name: {PhotonNetwork.CurrentRoom.Name} Players/Max.Players: {PhotonNetwork.CurrentRoom.PlayerCount} / {PhotonNetwork.CurrentRoom.MaxPlayers}";
+
+                if (PhotonNetwork.CurrentRoom.CustomProperties.ContainsValue(MultiplayerRacingGame.RacingModeName))
+                {
+                    _insideRoomPanelBackground.sprite = _racingBackground;
+                    _gameModeText.text = "Let's Race!";
+                }
+                else if (PhotonNetwork.CurrentRoom.CustomProperties.ContainsValue(MultiplayerRacingGame
+                             .DeathRaceModeName))
+                {
+                    _insideRoomPanelBackground.sprite = _deathRaceBackground;
+                    _gameModeText.text = "Death Race!";
+                }
                 
                 //Instantiate Player List GameObjects
                 foreach (Player player in PhotonNetwork.PlayerList)

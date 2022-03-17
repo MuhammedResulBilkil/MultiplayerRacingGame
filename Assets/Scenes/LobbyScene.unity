@@ -880,8 +880,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 294548175}
+        m_TargetAssemblyTypeName: PlayerSelection, Assembly-CSharp
         m_MethodName: NextPlayer
         m_Mode: 1
         m_Arguments:
@@ -2282,6 +2282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 294548173}
   - component: {fileID: 294548174}
+  - component: {fileID: 294548175}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -2328,10 +2329,30 @@ MonoBehaviour:
   _playerListPrefab: {fileID: 1294863439290794768, guid: 46f749e614f847a47940ad1dde964668, type: 3}
   _playerListContent: {fileID: 244169819}
   _startGameButton: {fileID: 1279214256}
+  _gameModeText: {fileID: 1016792208}
+  _insideRoomPanelBackground: {fileID: 1598625409}
+  _racingBackground: {fileID: 21300000, guid: df5dd41c5770c434ca5c0f00460b1e12, type: 3}
+  _deathRaceBackground: {fileID: 21300000, guid: ffa5b662caf5e0d4abe760fcb445f479, type: 3}
   _roomListUIPanel: {fileID: 0}
   _roomListParentGameObject: {fileID: 0}
   _roomListEntryPrefab: {fileID: 0}
   _joinRandomRoomUIPanel: {fileID: 1438516555}
+--- !u!114 &294548175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294548172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82c412c0ac4040d2a542b553353c5173, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _selectablePlayers:
+  - {fileID: 1833322808}
+  - {fileID: 1736180112}
+  - {fileID: 299006209}
 --- !u!1 &295141561
 GameObject:
   m_ObjectHideFlags: 0
@@ -3035,7 +3056,7 @@ GameObject:
   - component: {fileID: 332149306}
   - component: {fileID: 332149305}
   m_Layer: 5
-  m_Name: GameTypeText
+  m_Name: GameModeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6544,7 +6565,7 @@ GameObject:
   - component: {fileID: 1016792209}
   - component: {fileID: 1016792208}
   m_Layer: 5
-  m_Name: Text_GameType
+  m_Name: Text_GameMode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6622,7 +6643,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 16
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -8055,8 +8076,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 294548174}
+        m_TargetAssemblyTypeName: NetworkManager, Assembly-CSharp
         m_MethodName: OnStartGameButtonClicked
         m_Mode: 1
         m_Arguments:
@@ -8189,8 +8210,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 294548175}
+        m_TargetAssemblyTypeName: PlayerSelection, Assembly-CSharp
         m_MethodName: PreviousPlayer
         m_Mode: 1
         m_Arguments:
