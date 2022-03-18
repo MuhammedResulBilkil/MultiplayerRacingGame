@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using ExitGames.Client.Photon;
 using Photon.Pun;
 using UnityEngine;
@@ -10,6 +11,11 @@ namespace Lobby
         [SerializeField] private List<GameObject> _selectablePlayers = new List<GameObject>();
 
         private int _playerSelectionNumber = 0;
+
+        private void Start()
+        {
+            ActivatePlayer(0);
+        }
 
         private void ActivatePlayer(int index)
         {

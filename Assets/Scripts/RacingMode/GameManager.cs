@@ -23,6 +23,14 @@ namespace RacingMode
                     PhotonNetwork.Instantiate(_playerPrefabs[(int)playerSelectionNumber].name, instantiatePositon,
                         Quaternion.identity);
                 }
+                else
+                {
+                    Debug.LogError("MultiplayerRacingGame.PlayerSelectionNumber is not in CustomProperties!!!");
+                }
+            }
+            else
+            {
+                Debug.LogError("PhotonNetwork is not connected and ready yet!!!");
             }
         }
     }

@@ -41,6 +41,10 @@ namespace Lobby
                         { { MultiplayerRacingGame.IsPlayerReady, _isPlayerReady } };
 
                     PhotonNetwork.LocalPlayer.SetCustomProperties(newCustomProperties);
+
+                    /*Debug.Log("Player Custom Properties:");
+                    foreach (var playerCustomProperty in PhotonNetwork.LocalPlayer.CustomProperties)
+                        Debug.LogFormat($"{playerCustomProperty.Key} = {playerCustomProperty.Value}");*/
                 });
             }
         }
