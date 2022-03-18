@@ -321,6 +321,8 @@ GameObject:
   - component: {fileID: 6644687128709775103}
   - component: {fileID: 7912178770550127597}
   - component: {fileID: 261716193}
+  - component: {fileID: -3193054654092813530}
+  - component: {fileID: -186749294072881599}
   m_Layer: 0
   m_Name: RC_Player_CarJeep
   m_TagString: Untagged
@@ -388,11 +390,11 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 0
+  Synchronization: 3
   OwnershipTransfer: 0
-  observableSearch: 0
+  observableSearch: 2
   ObservedComponents:
-  - {fileID: 0}
+  - {fileID: -186749294072881599}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -408,6 +410,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c0a7d0add0d4294b797a9d710f1b175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-3193054654092813530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8151913764945104660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0fe1292d88a4393bf28951f31422ae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mainCamera: {fileID: 7806765842877098667}
+--- !u!114 &-186749294072881599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8151913764945104660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &8755522242653553365
 GameObject:
   m_ObjectHideFlags: 0
