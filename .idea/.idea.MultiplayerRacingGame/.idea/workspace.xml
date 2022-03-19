@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1b93a4c-7158-4dfa-8460-10acf47c9fd8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/RacingMode/LapController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/RacingMode/LapController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/RacingMode/RacingModeEventCodes.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/RacingMode/RacingModeEventCodes.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MultiplayerRacingGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MultiplayerRacingGame/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/RC_Player_CarJeep.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/RC_Player_CarJeep.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/RC_Player_CarMuscle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/RC_Player_CarMuscle.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/RC_Player_CarSport.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/RC_Player_CarSport.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/RacingScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/RacingScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RacingMode/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RacingMode/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RacingMode/LapController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RacingMode/LapController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/RacingMode/PlayerSetup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RacingMode/PlayerSetup.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +89,7 @@
       <workItem from="1647518913613" duration="6949000" />
       <workItem from="1647557587739" duration="1172000" />
       <workItem from="1647584468615" duration="9265000" />
-      <workItem from="1647692227886" duration="1668000" />
+      <workItem from="1647692227886" duration="5254000" />
     </task>
     <servers />
   </component>

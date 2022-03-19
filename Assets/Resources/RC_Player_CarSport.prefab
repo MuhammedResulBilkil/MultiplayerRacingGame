@@ -240,6 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89cbfcbb92af45c7b59054d4186047f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _lapTriggers: []
 --- !u!1 &673072161277074943
 GameObject:
   m_ObjectHideFlags: 0
