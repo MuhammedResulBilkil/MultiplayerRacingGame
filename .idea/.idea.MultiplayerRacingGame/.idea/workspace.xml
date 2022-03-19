@@ -2,14 +2,114 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1b93a4c-7158-4dfa-8460-10acf47c9fd8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Android.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Android/DebugLogLogcatListener.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Android/DebugLogLogcatListener.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Android/IngameDebugConsole.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Android/IngameDebugConsole.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Editor/DebugLogManagerEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Editor/DebugLogManagerEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Editor/IngameDebugConsole.Editor.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Editor/IngameDebugConsole.Editor.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/IngameDebugConsole.Runtime.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/IngameDebugConsole.Runtime.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/IngameDebugConsole.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/IngameDebugConsole.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Prefabs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Prefabs/CommandSuggestion.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Prefabs/CommandSuggestion.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Prefabs/DebugLogItem.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Prefabs/DebugLogItem.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/README.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts/CircularBuffer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts/CircularBuffer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts/Commands.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts/Commands/PlayerPrefsCommands.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts/Commands/PlayerPrefsCommands.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts/Commands/SceneCommands.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts/Commands/SceneCommands.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts/Commands/TimeCommands.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts/Commands/TimeCommands.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts/ConsoleMethodAttribute.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts/ConsoleMethodAttribute.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts/DebugLogConsole.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts/DebugLogConsole.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts/DebugLogEntry.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts/DebugLogEntry.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts/DebugLogIndexList.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts/DebugLogIndexList.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts/DebugLogItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts/DebugLogItem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts/DebugLogItemCopyWebGL.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts/DebugLogItemCopyWebGL.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts/DebugLogManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts/DebugLogManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts/DebugLogPopup.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts/DebugLogPopup.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts/DebugLogRecycledListView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts/DebugLogRecycledListView.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts/DebugLogResizeListener.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts/DebugLogResizeListener.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts/DebugsOnScrollListener.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts/DebugsOnScrollListener.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/IconClear.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/IconClear.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/IconCollapse.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/IconCollapse.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/IconError.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/IconError.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/IconHide.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/IconHide.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/IconInfo.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/IconInfo.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/IconResizeAllDirections.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/IconResizeAllDirections.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/IconResizeVertialOnly.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/IconResizeVertialOnly.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/IconSnapToBottom.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/IconSnapToBottom.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/IconSnapToBottomBg.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/IconSnapToBottomBg.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/IconWarning.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/IconWarning.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/SearchIcon.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/SearchIcon.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/SlicedBackground.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/SlicedBackground.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/SlicedBackground2.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/SlicedBackground2.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/SlicedBackground3.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/SlicedBackground3.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/Unused.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/Unused/IconErrorHighRes.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/Unused/IconErrorHighRes.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/Unused/IconInfoHighRes.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/Unused/IconInfoHighRes.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/Unused/IconWarningHighRes.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Sprites/Unused/IconWarningHighRes.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/WebGL.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/WebGL/IngameDebugConsole.jslib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/WebGL/IngameDebugConsole.jslib.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/iOS.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/iOS/IngameDebugConsole.mm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/iOS/IngameDebugConsole.mm.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/RacingMode/TimeCountDownManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/RacingMode/TimeCountDownManager.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MultiplayerRacingGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MultiplayerRacingGame/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/RC_Player_CarJeep.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/RC_Player_CarJeep.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/RC_Player_CarMuscle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/RC_Player_CarMuscle.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/RC_Player_CarSport.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/RC_Player_CarSport.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lobby/PlayerListEntryInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lobby/PlayerListEntryInitializer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lobby/PlayerSelection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lobby/PlayerSelection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LobbyScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LobbyScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/RacingScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/RacingScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RacingMode/CarMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RacingMode/CarMovement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/RacingMode/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RacingMode/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RacingMode/PlayerSetup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RacingMode/PlayerSetup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ThirdParty/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ThirdParty/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +188,8 @@
       <workItem from="1647506714410" duration="4340000" />
       <workItem from="1647518913613" duration="6949000" />
       <workItem from="1647557587739" duration="1172000" />
-      <workItem from="1647584468615" duration="2151000" />
+      <workItem from="1647584468615" duration="9265000" />
+      <workItem from="1647692227886" duration="311000" />
     </task>
     <servers />
   </component>

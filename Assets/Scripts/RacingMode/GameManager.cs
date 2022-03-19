@@ -1,14 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using Photon.Pun;
+using TMPro;
 using UnityEngine;
 
 namespace RacingMode
 {
     public class GameManager : MonoBehaviour
     {
+        public static GameManager Instance { get; private set; }
+
+        public TextMeshProUGUI countDownText;
+        
         [SerializeField] private List<GameObject> _playerPrefabs = new List<GameObject>();
         [SerializeField] private List<Transform> _instantiatePositons = new List<Transform>();
+
+        private void Awake()
+        {
+            if (Instance == null)
+                Instance = this;
+            else
+                Destroy(gameObject);
+        }
 
         private void Start()
         {
