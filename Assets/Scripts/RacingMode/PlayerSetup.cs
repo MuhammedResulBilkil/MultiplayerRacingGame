@@ -1,5 +1,6 @@
 ﻿using System;
 using Photon.Pun;
+using TMPro;
 using UnityEngine;
 
 namespace RacingMode
@@ -7,6 +8,7 @@ namespace RacingMode
     public class PlayerSetup : MonoBehaviourPunCallbacks
     {
         [SerializeField] private GameObject _cameraParent;
+        [SerializeField] private TextMeshProUGUI _playerNameText;
 
         private CarMovement _carMovement;
         private LapController _lapController;
@@ -31,11 +33,25 @@ namespace RacingMode
                 _lapController.enabled = false;
                 _cameraParent.SetActive(false);
             }
+            
+            SetPlayerUI();
         }
 
         public GameObject GetCameraParent()
         {
             return _cameraParent;
+        }
+
+        private void SetPlayerUI()
+        {
+            if (_playerNameText != null)
+            {
+                _playerNameText.text = photonView.Owner.NickName;
+
+                if (photonView.IsMine)
+                    _playerNameText.gameObject.SetActive(false);
+            }
+            
         }
     }
 }
