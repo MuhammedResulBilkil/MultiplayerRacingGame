@@ -14,6 +14,7 @@ namespace RacingMode
         
         [SerializeField] private List<GameObject> _playerPrefabs = new List<GameObject>();
         [SerializeField] private List<Transform> _instantiatePositons = new List<Transform>();
+        [SerializeField] private List<GameObject> _lapTriggers = new List<GameObject>();
 
         private void Awake()
         {
@@ -45,6 +46,11 @@ namespace RacingMode
             {
                 Debug.LogError("PhotonNetwork is not connected and ready yet!!!");
             }
+        }
+
+        public List<GameObject> GetLapTriggers()
+        {
+            return _lapTriggers;
         }
     }
 }

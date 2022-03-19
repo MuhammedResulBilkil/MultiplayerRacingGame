@@ -28,5 +28,10 @@ namespace RacingMode
                 _cameraParent.SetActive(false);
             }
         }
+
+        public GameObject GetCameraParent()
+        {
+            return _cameraParent;
+        }
     }
 }
