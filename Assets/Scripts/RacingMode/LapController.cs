@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Realtime;
+using TMPro;
 using UnityEngine;
 
 namespace RacingMode
@@ -16,6 +17,7 @@ namespace RacingMode
 
         private int _finishOrder;
         private string _nickName;
+        private int _viewID;
 
         private void Awake()
         {
@@ -42,8 +44,24 @@ namespace RacingMode
                 string nickNameOfFinishedPlayer = (string)eventData[0];
 
                 _finishOrder = (int)eventData[1];
+
+                int receivedViewID = (int)eventData[2];
                 
                 Debug.LogFormat($"{_finishOrder}. {nickNameOfFinishedPlayer}");
+
+                TextMeshProUGUI finishOrderUIText = GameManager.Instance.GetFinishOrderUITexts()[_finishOrder - 1];
+
+                if (receivedViewID == _viewID)
+                {
+                    finishOrderUIText.text = $"{_finishOrder}. {nickNameOfFinishedPlayer} (YOU)";
+                    finishOrderUIText.color = Color.red;
+                }
+                else
+                {
+                    finishOrderUIText.text = $"{_finishOrder}. {nickNameOfFinishedPlayer}";
+                }
+                
+                finishOrderUIText.gameObject.SetActive(true);
             }
         }
 
@@ -53,6 +71,7 @@ namespace RacingMode
                 _lapTriggers.Add(lapTrigger);
 
             _nickName = photonView.Owner.NickName;
+            _viewID = photonView.ViewID;
         }
 
         private void OnTriggerEnter(Collider other)
@@ -76,7 +95,7 @@ namespace RacingMode
 
             _finishOrder++;
 
-            object[] eventData = { _nickName, _finishOrder };
+            object[] eventData = { _nickName, _finishOrder, _viewID };
 
             RaiseEventOptions raiseEventOptions = new RaiseEventOptions
             {

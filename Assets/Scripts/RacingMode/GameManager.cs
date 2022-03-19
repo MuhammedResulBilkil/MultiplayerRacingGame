@@ -15,6 +15,7 @@ namespace RacingMode
         [SerializeField] private List<GameObject> _playerPrefabs = new List<GameObject>();
         [SerializeField] private List<Transform> _instantiatePositons = new List<Transform>();
         [SerializeField] private List<GameObject> _lapTriggers = new List<GameObject>();
+        [SerializeField] private List<TextMeshProUGUI> _finishOrderUITexts = new List<TextMeshProUGUI>();
 
         private void Awake()
         {
@@ -46,11 +47,20 @@ namespace RacingMode
             {
                 Debug.LogError("PhotonNetwork is not connected and ready yet!!!");
             }
+
+            foreach (var finishOrderUIText in _finishOrderUITexts)
+                finishOrderUIText.gameObject.SetActive(false);
+            
         }
 
         public List<GameObject> GetLapTriggers()
         {
             return _lapTriggers;
+        }
+
+        public List<TextMeshProUGUI> GetFinishOrderUITexts()
+        {
+            return _finishOrderUITexts;
         }
     }
 }
