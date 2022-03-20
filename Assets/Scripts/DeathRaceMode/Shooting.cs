@@ -10,12 +10,27 @@ namespace DeathRaceMode
         [SerializeField] private Camera _camera;
         [SerializeField] private DeathRacePlayer _deathRacePlayerProperties;
 
+        private float _fireRate;
+        private float _fireTimer;
+
+        private void Awake()
+        {
+            _fireRate = _deathRacePlayerProperties.fireRate;
+        }
+
         private void Update()
         {
             if (Input.GetKey(KeyCode.Space))
             {
-                Fire();
+                if (_fireTimer > _fireRate)
+                {
+                    Fire();
+                    _fireTimer = 0f;
+                }
             }
+
+            if (_fireTimer < _fireRate)
+                _fireTimer += Time.deltaTime;
         }
 
         private void Fire()
