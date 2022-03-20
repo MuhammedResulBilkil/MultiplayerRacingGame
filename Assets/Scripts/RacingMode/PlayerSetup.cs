@@ -21,17 +21,39 @@ namespace RacingMode
 
         private void Start()
         {
-            if (photonView.IsMine)
+            if (PhotonNetwork.CurrentRoom.CustomProperties.ContainsValue(MultiplayerRacingGame.RacingModeName))
             {
-                _carMovement.enabled = true;
-                _lapController.enabled = true;
-                _cameraParent.SetActive(true);
+                if (photonView.IsMine)
+                {
+                    _carMovement.enabled = true;
+                    _lapController.enabled = true;
+                    _cameraParent.SetActive(true);
+                }
+                else
+                {
+                    _carMovement.enabled = false;
+                    _lapController.enabled = false;
+                    _cameraParent.SetActive(false);
+                }
+            }
+            else if (PhotonNetwork.CurrentRoom.CustomProperties.ContainsValue(MultiplayerRacingGame.DeathRaceModeName))
+            {
+                if (photonView.IsMine)
+                {
+                    _carMovement.enabled = true;
+                    _carMovement.SetIsControlsEnabled(true);
+                    _cameraParent.SetActive(true);
+                }
+                else
+                {
+                    _carMovement.enabled = false;
+                    _carMovement.SetIsControlsEnabled(false);
+                    _cameraParent.SetActive(false);
+                }
             }
             else
             {
-                _carMovement.enabled = false;
-                _lapController.enabled = false;
-                _cameraParent.SetActive(false);
+                Debug.LogErrorFormat($"Nickname: {PhotonNetwork.LocalPlayer.NickName}. Available Custom Property has not been found!");
             }
             
             SetPlayerUI();
