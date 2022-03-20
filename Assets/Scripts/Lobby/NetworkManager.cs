@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using DeathRaceMode;
 using Photon.Pun;
 using Photon.Realtime;
+using RacingMode;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -43,6 +45,9 @@ namespace Lobby
         [SerializeField] private Image _insideRoomPanelBackground;
         [SerializeField] private Sprite _racingBackground;
         [SerializeField] private Sprite _deathRaceBackground;
+        [SerializeField] private List<GameObject> _playerSelectionUIGameObjects = new List<GameObject>();
+        [SerializeField] private List<DeathRacePlayer> _deathRacePlayers = new List<DeathRacePlayer>();
+        [SerializeField] private List<RacingPlayer> _racingPlayers = new List<RacingPlayer>();
 
         [Header("Room List UI Panel")] [SerializeField]
         private GameObject _roomListUIPanel;
@@ -247,12 +252,33 @@ namespace Lobby
                     {
                         _insideRoomPanelBackground.sprite = _racingBackground;
                         _gameModeText.text = "Let's Race!";
+                        
+                        for (int i = 0; i < _playerSelectionUIGameObjects.Count; i++)
+                        {
+                            _playerSelectionUIGameObjects[i].transform.Find("Text_PlayerName")
+                                .GetComponent<TextMeshProUGUI>().text = _racingPlayers[i].playerName;
+                            _playerSelectionUIGameObjects[i].GetComponent<Image>().sprite =
+                                _racingPlayers[i].playerSprite;
+                            _playerSelectionUIGameObjects[i].transform.Find("Text_PlayerProperty")
+                                    .GetComponent<TextMeshProUGUI>().text = "";
+                        }
                     }
                     else if (PhotonNetwork.CurrentRoom.CustomProperties.ContainsValue(MultiplayerRacingGame
                                  .DeathRaceModeName))
                     {
                         _insideRoomPanelBackground.sprite = _deathRaceBackground;
                         _gameModeText.text = "Death Race!";
+
+                        for (int i = 0; i < _playerSelectionUIGameObjects.Count; i++)
+                        {
+                            _playerSelectionUIGameObjects[i].transform.Find("Text_PlayerName")
+                                .GetComponent<TextMeshProUGUI>().text = _deathRacePlayers[i].playerName;
+                            _playerSelectionUIGameObjects[i].GetComponent<Image>().sprite =
+                                _deathRacePlayers[i].playerSprite;
+                            _playerSelectionUIGameObjects[i].transform.Find("Text_PlayerProperty")
+                                    .GetComponent<TextMeshProUGUI>().text =
+                                $"{_deathRacePlayers[i].weaponName}: Damage: {_deathRacePlayers[i].damage} FireRate: {_deathRacePlayers[i].fireRate}";
+                        }
                     }
 
                     //Instantiate Player List GameObjects

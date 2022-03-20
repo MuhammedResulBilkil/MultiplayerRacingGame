@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1b93a4c-7158-4dfa-8460-10acf47c9fd8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/DeathRaceMode.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/DeathRaceMode/DR_Jeep.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/DeathRaceMode/DR_Jeep.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/DeathRaceMode/DR_Muscle.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/DeathRaceMode/DR_Muscle.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/DeathRaceMode/DR_Sports.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/DeathRaceMode/DR_Sports.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/RacingMode.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DeathRaceMode.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DeathRaceMode/DeathRacePlayer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DeathRaceMode/DeathRacePlayer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/RacingMode/RacingPlayer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/RacingMode/RacingPlayer.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MultiplayerRacingGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MultiplayerRacingGame/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LobbyScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LobbyScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lobby/NetworkManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lobby/NetworkManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +86,7 @@
       <workItem from="1647584468615" duration="9265000" />
       <workItem from="1647692227886" duration="8162000" />
       <workItem from="1647774103612" duration="751000" />
-      <workItem from="1647776887121" duration="764000" />
+      <workItem from="1647776887121" duration="2368000" />
     </task>
     <servers />
   </component>
