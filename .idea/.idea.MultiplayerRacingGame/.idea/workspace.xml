@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1b93a4c-7158-4dfa-8460-10acf47c9fd8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DeathRaceMode/GameManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DeathRaceMode/GameManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DeathRaceMode/Bullet.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DeathRaceMode/Bullet.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DeathRaceMode/Shooting.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DeathRaceMode/Shooting.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MultiplayerRacingGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MultiplayerRacingGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/DG_Player_CarJeep.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DG_Player_CarJeep.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/DG_Player_CarMuscle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DG_Player_CarMuscle.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/DG_Player_CarSport.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DG_Player_CarSport.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MachineGunBULLET.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/MachineGunBULLET.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/DeathRaceScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DeathRaceScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RacingMode/PlayerSetup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RacingMode/PlayerSetup.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +19,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9129caca836046fd844f877f14792ee86e00/6e/a62fcded/Input.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../HideWeapon/Assets/FinishEnemySpawner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0ee480759f3d481d82ada245dc74f9fd13be00/09/821acb17/KeyCode.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -91,7 +92,8 @@
       <workItem from="1647584468615" duration="9265000" />
       <workItem from="1647692227886" duration="8162000" />
       <workItem from="1647774103612" duration="751000" />
-      <workItem from="1647776887121" duration="6758000" />
+      <workItem from="1647776887121" duration="7803000" />
+      <workItem from="1647807933737" duration="1193000" />
     </task>
     <servers />
   </component>
