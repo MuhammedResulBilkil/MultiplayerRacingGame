@@ -61,6 +61,15 @@ namespace DeathRaceMode
                     
                     _lineRenderer.SetPosition(0, firePosition);
                     _lineRenderer.SetPosition(1, raycastHit.point);
+
+                    if (raycastHit.collider.CompareTag("Player"))
+                    {
+                        TakeDamage hitPlayerTakeDamage = raycastHit.collider.GetComponent<TakeDamage>();
+                        PhotonView hitPlayerPhotonView = raycastHit.collider.GetComponent<PhotonView>();
+                        
+                        if(hitPlayerPhotonView.IsMine)
+                            hitPlayerPhotonView.RPC(nameof(hitPlayerTakeDamage.DoDamage), RpcTarget.AllBuffered, _deathRacePlayerProperties.damage);
+                    }
                     
                     StopAllCoroutines();
                     StartCoroutine(DisableLaserAfterSecs(0.3f));

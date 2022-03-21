@@ -224,6 +224,7 @@ GameObject:
   - component: {fileID: 538045697}
   - component: {fileID: 538045700}
   - component: {fileID: 730389164}
+  - component: {fileID: 4671752292951905829}
   m_Layer: 0
   m_Name: DG_Player_CarJeep
   m_TagString: Player
@@ -360,6 +361,20 @@ MonoBehaviour:
   _camera: {fileID: 5697894330807671576}
   _deathRacePlayerProperties: {fileID: 11400000, guid: c3ba91fc7d3ad4a4a81020690b9d039e, type: 2}
   _lineRenderer: {fileID: 0}
+--- !u!114 &4671752292951905829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2297249700076169209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94726349dc3042f3a0a6227265a5c450, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 100
+  _healthBar: {fileID: 5946105997015590243}
 --- !u!1 &4512136407534517126
 GameObject:
   m_ObjectHideFlags: 0
