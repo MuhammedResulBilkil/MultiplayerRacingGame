@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1b93a4c-7158-4dfa-8460-10acf47c9fd8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/DeathRaceScene.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/DeathRaceScene/LightingData.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/DeathRaceScene/LightingData.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/DeathRaceScene/ReflectionProbe-0.exr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/DeathRaceScene/ReflectionProbe-0.exr.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DeathRaceMode/TakeDamage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DeathRaceMode/TakeDamage.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MultiplayerRacingGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MultiplayerRacingGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/DG_Player_CarJeep.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DG_Player_CarJeep.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/DG_Player_CarMuscle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DG_Player_CarMuscle.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/DG_Player_CarSport.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DG_Player_CarSport.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DeathPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DeathPanel.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/DeathRaceScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DeathRaceScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeathRaceMode/Bullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DeathRaceMode/Bullet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeathRaceMode/Shooting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DeathRaceMode/Shooting.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeathRaceMode/TakeDamage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DeathRaceMode/TakeDamage.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +91,7 @@
       <workItem from="1647774103612" duration="751000" />
       <workItem from="1647776887121" duration="7803000" />
       <workItem from="1647807933737" duration="2742000" />
-      <workItem from="1647850034393" duration="5773000" />
+      <workItem from="1647850034393" duration="9422000" />
     </task>
     <servers />
   </component>
