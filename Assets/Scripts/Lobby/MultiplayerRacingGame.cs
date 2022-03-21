@@ -8,4 +8,5 @@ public static class MultiplayerRacingGame
     public const string DeathRaceSceneName = "DeathRaceScene";
     public const string IsPlayerReady = "IsPlayerReady";
     public const string PlayerSelectionNumber = "PlayerSelectionNumber";
+    public const string LobbySceneName = "LobbyScene";
 }

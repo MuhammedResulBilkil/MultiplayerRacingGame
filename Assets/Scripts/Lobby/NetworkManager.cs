@@ -391,7 +391,7 @@ namespace Lobby
 
         public override void OnLeftRoom()
         {
-            Debug.Log("OnLeftRoom!");
+            Debug.LogFormat($"OnLeftRoom! Scene Name: {SceneManager.GetActiveScene().name}");
 
             ActivatePanel(_gameOptionsUIPanel);
 

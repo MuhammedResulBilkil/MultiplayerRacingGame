@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 namespace DeathRaceMode
 {
-    public class GameManager : MonoBehaviour
+    public class GameManager : MonoBehaviourPunCallbacks
     {
         [SerializeField] private List<GameObject> _playerPrefabs = new List<GameObject>();
 
@@ -28,8 +29,23 @@ namespace DeathRaceMode
                         $"Player Name: {PhotonNetwork.LocalPlayer.NickName}. PlayerSelectionNumber Custom Property is not found!!!");
                 }
             }
+        }
+
+        public void OnQuitMatchButtonClicked()
+        {
+            PhotonNetwork.LeaveRoom();
+        }
+
+        public override void OnJoinedRoom()
+        {
+            Debug.LogFormat($"OnJoinedRoom! Scene Name: {SceneManager.GetActiveScene().name}. Player Name: {PhotonNetwork.LocalPlayer.NickName}");
+        }
+
+        public override void OnLeftRoom()
+        {
+            Debug.LogFormat($"OnLeftRoom! Scene Name: {SceneManager.GetActiveScene().name}");
             
-                
+            PhotonNetwork.LoadLevel(MultiplayerRacingGame.LobbySceneName);
         }
     }
 }
