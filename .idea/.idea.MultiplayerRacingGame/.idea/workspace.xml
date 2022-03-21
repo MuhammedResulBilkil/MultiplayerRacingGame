@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c1b93a4c-7158-4dfa-8460-10acf47c9fd8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MultiplayerRacingGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MultiplayerRacingGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/DeathRaceMode/DR_Muscle.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/DeathRaceMode/DR_Muscle.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DeathRaceScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DeathRaceScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeathRaceMode/Shooting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DeathRaceMode/Shooting.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +89,8 @@
       <workItem from="1647692227886" duration="8162000" />
       <workItem from="1647774103612" duration="751000" />
       <workItem from="1647776887121" duration="7803000" />
-      <workItem from="1647807933737" duration="2054000" />
+      <workItem from="1647807933737" duration="2742000" />
+      <workItem from="1647850034393" duration="1314000" />
     </task>
     <servers />
   </component>
