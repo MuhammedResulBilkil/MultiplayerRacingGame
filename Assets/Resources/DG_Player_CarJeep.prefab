@@ -359,6 +359,7 @@ MonoBehaviour:
   _firePosition: {fileID: 1721425625}
   _camera: {fileID: 5697894330807671576}
   _deathRacePlayerProperties: {fileID: 11400000, guid: c3ba91fc7d3ad4a4a81020690b9d039e, type: 2}
+  _lineRenderer: {fileID: 0}
 --- !u!1 &4512136407534517126
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections;
+using Photon.Pun;
 using UnityEngine;
 
 namespace DeathRaceMode
 {
-    public class Shooting : MonoBehaviour
+    public class Shooting : MonoBehaviourPun
     {
         [SerializeField] private GameObject _bulletPrefab;
         [SerializeField] private Transform _firePosition;
@@ -25,11 +26,15 @@ namespace DeathRaceMode
 
         private void Update()
         {
+            if(!photonView.IsMine && PhotonNetwork.IsConnected)
+                return;
+
             if (Input.GetKey(KeyCode.Space))
             {
                 if (_fireTimer > _fireRate)
                 {
-                    Fire();
+                    //Fire
+                    photonView.RPC(nameof(Fire), RpcTarget.All, _firePosition.position);
                     _fireTimer = 0f;
                 }
             }
@@ -38,8 +43,11 @@ namespace DeathRaceMode
                 _fireTimer += Time.deltaTime;
         }
 
-        private void Fire()
+        [PunRPC]
+        private void Fire(Vector3 firePosition, PhotonMessageInfo photonMessageInfo)
         {
+            Debug.LogFormat($"{nameof(Fire)} RPC Called on {PhotonNetwork.LocalPlayer.NickName}! GameObject Name: {gameObject.name} Message: {photonMessageInfo.ToString()}");
+            
             Ray ray = _camera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
             
             if (_useLaser)
@@ -51,7 +59,7 @@ namespace DeathRaceMode
                     if (!_lineRenderer.enabled)
                         _lineRenderer.enabled = true;
                     
-                    _lineRenderer.SetPosition(0, _firePosition.position);
+                    _lineRenderer.SetPosition(0, firePosition);
                     _lineRenderer.SetPosition(1, raycastHit.point);
                     
                     StopAllCoroutines();
@@ -60,7 +68,7 @@ namespace DeathRaceMode
             }
             else
             {
-                GameObject bulletGameObject = Instantiate(_bulletPrefab, _firePosition.position, Quaternion.identity);
+                GameObject bulletGameObject = Instantiate(_bulletPrefab, firePosition, Quaternion.identity);
                 bulletGameObject.GetComponent<Bullet>().Initializer(ray.direction, _deathRacePlayerProperties.bulletSpeed,
                     _deathRacePlayerProperties.damage);
             }

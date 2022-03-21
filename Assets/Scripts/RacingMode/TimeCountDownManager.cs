@@ -35,7 +35,7 @@ namespace RacingMode
         }
 
         [PunRPC]
-        public void SetTime(float time, PhotonMessageInfo photonMessageInfo)
+        private void SetTime(float time, PhotonMessageInfo photonMessageInfo)
         {
             if (photonView.IsMine)
             {
@@ -46,7 +46,7 @@ namespace RacingMode
         }
 
         [PunRPC]
-        public void StartTheRace(PhotonMessageInfo photonMessageInfo)
+        private void StartTheRace(PhotonMessageInfo photonMessageInfo)
         {
             Debug.LogFormat($"{nameof(StartTheRace)} RPC Called on {PhotonNetwork.LocalPlayer.NickName}! GameObject Name: {gameObject.name} Message: {photonMessageInfo.ToString()}");
             _carMovement.SetIsControlsEnabled(true);
