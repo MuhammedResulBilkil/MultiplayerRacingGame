@@ -58,6 +58,7 @@ namespace Lobby
         [Header("Join Random Room UI Panel")] [SerializeField]
         private GameObject _joinRandomRoomUIPanel;
 
+        private PlayerSelection _playerSelection;
         private string _gameModeName;
 
         private List<GameObject> _panels = new List<GameObject>();
@@ -69,6 +70,8 @@ namespace Lobby
 
         private void Awake()
         {
+            _playerSelection = GetComponent<PlayerSelection>();
+            
             _panels.Add(_loginUIPanel);
             _panels.Add(_gameOptionsUIPanel);
             _panels.Add(_createRoomUIPanel);
@@ -220,7 +223,23 @@ namespace Lobby
 
         public override void OnConnectedToMaster()
         {
-            Debug.Log(
+            if (PhotonNetwork.LocalPlayer.CustomProperties.TryGetValue(MultiplayerRacingGame.PlayerSelectionNumber,
+                    out object playerSelectionNumber))
+            {
+                Debug.LogFormat(
+                    $"OnConnectedToMaster! PlayerSelectionNumber: {playerSelectionNumber}");
+                _playerSelection.SetPlayerSelectionNumber((int) playerSelectionNumber);
+                
+                _playerSelection.ActivatePlayer((int) playerSelectionNumber);
+            }
+            else
+            {
+                Debug.Log("OnConnectedToMaster! Player has not selected a car yet!");
+                
+                _playerSelection.ActivatePlayer(0);
+            }
+            
+            Debug.LogFormat(
                 $"OnConnectedToMaster! {PhotonNetwork.LocalPlayer.NickName} is connected to Photon Master Server!");
 
             ActivatePanel(_gameOptionsUIPanel);
@@ -307,7 +326,7 @@ namespace Lobby
 
         public override void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps)
         {
-            Debug.LogFormat($"OnPlayerPropertiesUpdate! Target Player Name: {targetPlayer.NickName}");
+            Debug.LogFormat($"OnPlayerPropertiesUpdate! Lobby Scene! Target Player Name: {targetPlayer.NickName}");
 
             if (_playerListGameObjects.TryGetValue(targetPlayer.ActorNumber, out GameObject playerListGameObject))
             {

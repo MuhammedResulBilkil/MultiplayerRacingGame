@@ -14,10 +14,10 @@ namespace Lobby
 
         private void Start()
         {
-            ActivatePlayer(0);
+            //ActivatePlayer(0);
         }
 
-        private void ActivatePlayer(int index)
+        public void ActivatePlayer(int index)
         {
             foreach (GameObject selectablePlayer in _selectablePlayers)
                 selectablePlayer.SetActive(false);
@@ -28,6 +28,8 @@ namespace Lobby
             Hashtable playerCustomProperties = new Hashtable
                 { { MultiplayerRacingGame.PlayerSelectionNumber, _playerSelectionNumber } };
             PhotonNetwork.LocalPlayer.SetCustomProperties(playerCustomProperties);
+            
+            Debug.LogFormat($"Activate Player! Index Number: {index}");
         }
 
         public void NextPlayer()
@@ -48,6 +50,11 @@ namespace Lobby
                 _playerSelectionNumber = _selectablePlayers.Count - 1;
 
             ActivatePlayer(_playerSelectionNumber);
+        }
+
+        public void SetPlayerSelectionNumber(int playerSelectionNumber)
+        {
+            _playerSelectionNumber = playerSelectionNumber;
         }
     }
 }

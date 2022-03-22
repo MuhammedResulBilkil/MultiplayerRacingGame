@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using ExitGames.Client.Photon;
 using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
@@ -18,6 +20,9 @@ namespace DeathRaceMode
                 if (PhotonNetwork.LocalPlayer.CustomProperties.TryGetValue(MultiplayerRacingGame.PlayerSelectionNumber,
                         out object playerSelectionNumber))
                 {
+                    Debug.LogFormat(
+                        $"Death Race Scene Start! PlayerSelectionNumber: {((int) playerSelectionNumber).ToString()}");
+                    
                     int randomPositon = Random.Range(-15, 15);
 
                     PhotonNetwork.Instantiate(_playerPrefabs[(int)playerSelectionNumber].name,
@@ -28,6 +33,16 @@ namespace DeathRaceMode
                     Debug.LogErrorFormat(
                         $"Player Name: {PhotonNetwork.LocalPlayer.NickName}. PlayerSelectionNumber Custom Property is not found!!!");
                 }
+            }
+        }
+        
+        public override void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps)
+        {
+            Debug.LogFormat($"OnPlayerPropertiesUpdate! Death Race Scene! Target Player Name: {targetPlayer.NickName}");
+
+            if (changedProps.TryGetValue(MultiplayerRacingGame.PlayerSelectionNumber, out object playerSelectionNumber))
+            {
+                Debug.LogFormat($"Target Player's Selection Number: {playerSelectionNumber}");
             }
         }
 

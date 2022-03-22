@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1b93a4c-7158-4dfa-8460-10acf47c9fd8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/NetworkDebug.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/NetworkDebug.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MultiplayerRacingGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MultiplayerRacingGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DeathRaceScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DeathRaceScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeathRaceMode/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DeathRaceMode/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lobby/MultiplayerRacingGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lobby/MultiplayerRacingGame.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lobby/NetworkManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lobby/NetworkManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lobby/PlayerSelection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lobby/PlayerSelection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RacingMode/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RacingMode/GameManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +94,8 @@
       <workItem from="1647774103612" duration="751000" />
       <workItem from="1647776887121" duration="7803000" />
       <workItem from="1647807933737" duration="2742000" />
-      <workItem from="1647850034393" duration="11902000" />
+      <workItem from="1647850034393" duration="12946000" />
+      <workItem from="1647950272825" duration="3307000" />
     </task>
     <servers />
   </component>

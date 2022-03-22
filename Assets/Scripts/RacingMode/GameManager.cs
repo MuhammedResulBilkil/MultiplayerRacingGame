@@ -32,6 +32,9 @@ namespace RacingMode
                 if (PhotonNetwork.LocalPlayer.CustomProperties.TryGetValue(MultiplayerRacingGame.PlayerSelectionNumber,
                         out object playerSelectionNumber))
                 {
+                    Debug.LogFormat(
+                        $"Racing Scene Start! PlayerSelectionNumber: {playerSelectionNumber}");
+                    
                     int actorNumber = PhotonNetwork.LocalPlayer.ActorNumber;
                     Vector3 instantiatePositon = _instantiatePositons[actorNumber - 1].position;
 
